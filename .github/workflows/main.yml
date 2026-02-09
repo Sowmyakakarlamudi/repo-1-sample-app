@@ -12,18 +12,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # SonarCloud Code Quality Scan
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v2
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      with:
-        args: >
-          -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
-          -Dsonar.organization=${{ secrets.SONAR_ORG }}
-          -Dsonar.sources=.
-          -Dsonar.qualitygate.wait=false
-
     # Login to DockerHub
     - name: Login to DockerHub
       uses: docker/login-action@v3
