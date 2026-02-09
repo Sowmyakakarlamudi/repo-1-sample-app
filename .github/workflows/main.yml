@@ -22,6 +22,7 @@ jobs:
           -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
           -Dsonar.organization=${{ secrets.SONAR_ORG }}
           -Dsonar.sources=.
+          -Dsonar.qualitygate.wait=false
 
     # Login to DockerHub
     - name: Login to DockerHub
