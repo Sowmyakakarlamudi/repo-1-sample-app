@@ -1,14 +1,7 @@
 from flask import Flask
-from flask_wtf.csrf import CSRFProtect
-import os
+
 
 app = Flask(__name__)
-
-# Secret key for security
-app.config["SECRET_KEY"] = os.urandom(32)
-
-# Enable CSRF protection
-csrf = CSRFProtect(app)
 
 @app.route("/")
 def hello():
